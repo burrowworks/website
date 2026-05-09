@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion Request — Burrowworks</title>
+  <meta name="description" content="Request deletion of your personal data from Burrowworks apps.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      background: #0a0a0a;
+      color: #e5e5e5;
+      min-height: 100vh;
+      padding: 2rem;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(80, 80, 120, 0.15), transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(60, 80, 100, 0.12), transparent 50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 4rem 0 6rem;
+    }
+
+    .logo {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 3rem;
+    }
+
+    .logo a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .logo a:hover {
+      color: #bbb;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.75rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      color: #fafafa;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #999;
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #333;
+      margin: 2.5rem 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #e5e5e5;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #444;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #444;
+    }
+
+    select {
+      appearance: none;
+      cursor: pointer;
+      color: #e5e5e5;
+    }
+
+    select option {
+      background: #111;
+      color: #e5e5e5;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    button[type="submit"] {
+      margin-top: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: #e5e5e5;
+      color: #0a0a0a;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      font-family: inherit;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+
+    button[type="submit"]:hover {
+      background: #fff;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: #555;
+      line-height: 1.6;
+      margin-top: 1.5rem;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #555;
+      letter-spacing: 0.1em;
+      z-index: 1;
+    }
+
+    footer a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo"><a href="/">Burrowworks</a></div>
+
+    <h1>Data Deletion Request</h1>
+    <p class="subtitle">Submit this form to request deletion of your personal data from any Burrowworks app. We'll process your request within 30 days and confirm by email.</p>
+
+    <div class="divider"></div>
+
+    <form action="https://formsubmit.co/support@burrowworks.dev" method="POST">
+      <!-- Formsubmit config -->
+      <input type="hidden" name="_subject" value="Data Deletion Request">
+      <input type="hidden" name="_next" value="https://burrowworks.dev/data-deletion-thanks.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="field">
+        <label for="email">Your email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="field">
+        <label for="app">App</label>
+        <select id="app" name="app" required>
+          <option value="" disabled selected>Select an app</option>
+          <option value="ClearCycle">ClearCycle</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Anything else we should know (optional)</label>
+        <textarea id="message" name="message" placeholder="e.g. I'd also like confirmation once my data is deleted."></textarea>
+      </div>
+
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <p class="note">After submitting, you'll receive a confirmation email. All account data including budget history, transactions, and connected bank accounts will be permanently deleted. This action cannot be undone.</p>
+  </div>
+
+  <footer>
+    <a href="/">← burrowworks.dev</a> &nbsp;&nbsp;·&nbsp;&nbsp; © 2026 Burrowworks
+  </footer>
+</body>
+</html>
