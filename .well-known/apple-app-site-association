@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "79D6LMFK3F.com.payperiod.mobile",
+        "paths": ["/clearcycle/oauth", "/clearcycle/oauth/*"]
+      }
+    ]
+  }
+}
